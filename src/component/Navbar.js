@@ -7,7 +7,7 @@ class Navbar extends Component
     {
         return {
              /* backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)" */
-            backgroundColor: "#5FE303",
+            backgroundColor: "#038BE3",
         }
     }
 
