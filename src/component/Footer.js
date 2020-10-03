@@ -1,46 +1,41 @@
 import React, { Component } from "react";
 
-class Footer extends Component
-{
-    total_style = () => 
-    {
+class Footer extends Component {
+    total_style = () => {
         return {
             display: "flex",
             backgroundColor: "#3A3A3A",
             width: "100%",
             height: "200px",
             padding: "50px",
-            margin: "0px"
+            margin: "0px",
+            top: "70vh"
         }
     };
 
-    column_style = () => 
-    {
+    column_style = () => {
         return {
             display: "grid"
         }
     };
 
-    link_style = () => 
-    {
+    link_style = () => {
         return {
             textDecoration: "none",
             color: "#FFFFFF"
         }
     };
 
-    text_style = () => 
-    {
+    text_style = () => {
         return {
             margin: "0px",
             color: "#FFFFFF"
         }
     };
 
-    render()
-    {
-        return(
-            <div className="total" style={this.total_style()}>
+    render() {
+        return (
+            <div className="total mt-4" style={this.total_style()}>
                 <div className="column" style={this.column_style()}>
                     <h5 className="text" style={this.text_style()}></h5>
                     <h5 className="text" style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
