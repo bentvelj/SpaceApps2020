@@ -1,19 +1,17 @@
 import React from 'react';
 import About from './component/About'
-import logo from './logo.svg';
+import Search from './component/Search'
 import './App.css';
-import { navigate, Router } from '@reach/router';
+import { Router } from '@reach/router';
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return (
       <div className="App">
         <Router>
           <About path="/" />
+          <Search path="/search" />
         </Router>
       </div>
     )
