@@ -12,7 +12,7 @@ class Footer extends Component {
             justifyContent: "space-around",
             backgroundColor: "#3A3A3A",
             width: "100%",
-            height: "200px",
+            height: "100px",
             padding: "50px",
             margin: "0px",
         }
@@ -20,7 +20,7 @@ class Footer extends Component {
 
     column_style = () => {
         return {
-            display: "grid"
+            display: "flex"
         }
     };
 
@@ -56,9 +56,7 @@ class Footer extends Component {
         return (
             <div style={this.total_style()}>
                 <div style={this.column_style()}>
-                    <h5 style={this.text_style()}></h5>
                     <h5 style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
-                    <h5 style={this.text_style()}></h5>
                 </div>
 
                 <div style={this.column_style()}>
