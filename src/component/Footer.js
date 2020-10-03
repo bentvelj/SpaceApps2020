@@ -6,6 +6,8 @@ import dataset_logo from '../res/dataset_logo.png';
 class Footer extends Component {
     total_style = () => {
         return {
+            position: "absolute",
+            bottom: "0",
             display: "flex",
             justifyContent: "space-around",
             backgroundColor: "#3A3A3A",
@@ -13,7 +15,6 @@ class Footer extends Component {
             height: "200px",
             padding: "50px",
             margin: "0px",
-            top: "70vh"
         }
     };
 
@@ -39,15 +40,6 @@ class Footer extends Component {
         }
     };
 
-<<<<<<< HEAD
-    render() {
-        return (
-            <div className="total mt-4" style={this.total_style()}>
-                <div className="column" style={this.column_style()}>
-                    <h5 className="text" style={this.text_style()}></h5>
-                    <h5 className="text" style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
-                    <h5 className="text" style={this.text_style()}></h5>
-=======
     image_style = () =>
     {
         return {
@@ -64,7 +56,6 @@ class Footer extends Component {
                     <h5 style={this.text_style()}></h5>
                     <h5 style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
                     <h5 style={this.text_style()}></h5>
->>>>>>> ea6c15a1c3539478f83be89cde193ff25dda906e
                 </div>
 
                 <div style={this.column_style()}>
