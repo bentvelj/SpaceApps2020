@@ -7,20 +7,21 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar navbar-expand navbar-light mb-4" style={{backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)"}}>
                 <div className="container">
-                    <img className='m-4' src={logo} alt="SpaceNearby Logo" href="#" style={{width:'35%', textAlign:'center'}}></img>
+                    <div className='d-flex justify-content-center'>
+                        <img className='m-4' src={logo} alt="SpaceNearby Logo" href="#" style={{position:'relative', left:'15%', width:'35%'}}></img>
+                    </div>
                     <div className="collapse navbar-collapse">
-                        <ul className="navbar-nav ml-auto">
+                        {/* <ul className="navbar-nav ml-auto button-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="/">About</a>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/">About</a></button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/search">Search</a>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/search">Search</a></button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/whatshot">Whats Hot</a>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/whatshot">What's Hot</a></button>
                             </li>
-
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
             </nav>
