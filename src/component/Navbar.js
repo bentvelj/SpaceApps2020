@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-
+import logo from '../res/logo.png';
 class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
                 <div className="container">
-                    <a className="navbar-brand" href="#">SpaceApps2020</a>
+                    <img src={logo} alt="SpaceNearby Logo" href="#"></img>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
