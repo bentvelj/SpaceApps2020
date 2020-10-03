@@ -17,7 +17,7 @@ const About = () => (
                     display="initial"
                     position="relative"
                     frameborder="0"
-                    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs&q=record+stores+in+Seattle" allowfullscreen></Iframe>/>
+                    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs&q=record+stores+in+Seattle" allowfullscreen></Iframe>
         </Layout>
 
     </div>
