@@ -5,9 +5,9 @@ import logo from '../res/FinalLogo.png';
 class Navbar extends React.Component {
     render() {
         return (
-            <nav className="navbar navbar-expand navbar-light mb-4" style={{backgroundImage: "linear-gradient(120deg, #1cc4df, #c908a7)"}}>
+            <nav className="navbar navbar-expand navbar-light mb-4" style={{backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)"}}>
                 <div className="container">
-                    <img src={logo} alt="SpaceNearby Logo" href="#" style={{width:'50%'}}></img>
+                    <img className='m-4' src={logo} alt="SpaceNearby Logo" href="#" style={{width:'35%', textAlign:'center'}}></img>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
