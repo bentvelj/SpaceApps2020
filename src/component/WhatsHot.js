@@ -12,13 +12,13 @@ class WhatsHot extends React.Component {
     componentDidMount() {
         // var header = new Headers();
         // header.append("api_key", '6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA')
-        var request = {
-            method: 'GET',
-            // headers: header
-        }
-        console.log(request)
+        // var request = {
+        //     method: 'GET',
+        //     // headers: header
+        // }
+        // console.log(request)
 
-        fetch(`https://localhost:4000/pic`, request)
+        fetch(`http://localhost:4000/pic`)
             .then(res => res.json())
             .then(data => this.setState({ pic: data }))
 
@@ -29,9 +29,9 @@ class WhatsHot extends React.Component {
         return (
             <div>
                 <Layout>
-                    <img src={this.state.pic.hdurl} alt="hotimage"></img>
+                    <img src={this.state.pic.hdurl} alt="hotimage" style={{ width: "40vw" }}></img>
                 </Layout>
-            </div>
+            </div >
         )
 
     }
