@@ -3,10 +3,8 @@ import git_logo from '../res/git_logo.png';
 import challenge_logo from '../res/challenge_logo.png';
 import dataset_logo from '../res/dataset_logo.png';
 
-class Footer extends Component
-{
-    total_style = () => 
-    {
+class Footer extends Component {
+    total_style = () => {
         return {
             display: "flex",
             justifyContent: "space-around",
@@ -14,19 +12,18 @@ class Footer extends Component
             width: "100%",
             height: "200px",
             padding: "50px",
-            margin: "0px"
+            margin: "0px",
+            top: "70vh"
         }
     };
 
-    column_style = () => 
-    {
+    column_style = () => {
         return {
             display: "grid"
         }
     };
 
-    link_style = () => 
-    {
+    link_style = () => {
         return {
             textDecoration: "none",
             display: "flex",
@@ -35,14 +32,22 @@ class Footer extends Component
         }
     };
 
-    text_style = () => 
-    {
+    text_style = () => {
         return {
             margin: "0px",
             color: "#FFFFFF"
         }
     };
 
+<<<<<<< HEAD
+    render() {
+        return (
+            <div className="total mt-4" style={this.total_style()}>
+                <div className="column" style={this.column_style()}>
+                    <h5 className="text" style={this.text_style()}></h5>
+                    <h5 className="text" style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
+                    <h5 className="text" style={this.text_style()}></h5>
+=======
     image_style = () =>
     {
         return {
@@ -59,6 +64,7 @@ class Footer extends Component
                     <h5 style={this.text_style()}></h5>
                     <h5 style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
                     <h5 style={this.text_style()}></h5>
+>>>>>>> ea6c15a1c3539478f83be89cde193ff25dda906e
                 </div>
 
                 <div style={this.column_style()}>
