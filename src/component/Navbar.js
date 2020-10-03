@@ -11,15 +11,14 @@ class Navbar extends React.Component {
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/">About</a>
+                                <button type="button" class="btn btn-primary mx-4" href="/">About</button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/search">Search</a>
+                            <button type="button" class="btn btn-primary mx-4" href="/search">Search</button>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/whatshot">Whats Hot</a>
+                            <button type="button" class="btn btn-primary mx-4" href="/whatshot">What's Hot</button>
                             </li>
-
                         </ul>
                     </div>
                 </div>
