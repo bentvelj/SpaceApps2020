@@ -1,28 +1,23 @@
 import React from 'react';
+import About from './component/About'
 import logo from './logo.svg';
 import './App.css';
+import { navigate, Router } from '@reach/router';
 
-function App() {
-  return (
-    <div className="App">
-      <button className="btn btn-dark">thing</button>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+  constructor() {
+    super();
+  }
 
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <About path="/" />
+        </Router>
+      </div>
+    )
+  }
 }
 
 export default App;
