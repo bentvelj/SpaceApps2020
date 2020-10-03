@@ -9,6 +9,7 @@ const Layout = (props) => (
             {props.children}
 
         </div>
+
     </div>
 )
 

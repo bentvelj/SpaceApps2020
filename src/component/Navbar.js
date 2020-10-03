@@ -4,7 +4,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
-                <div className="container">
+                <div className="container my-4">
                     <a className="navbar-brand" href="#">SpaceApps2020</a>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav ml-auto">
