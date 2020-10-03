@@ -6,11 +6,10 @@ class Footer extends Component
     {
         return {
             display: "flex",
-            justifyContent: "space-between",
-            backgroundColor: "#838383",
+            backgroundColor: "#3A3A3A",
             width: "100%",
-            height: "100px",
-            padding: "0px",
+            height: "200px",
+            padding: "50px",
             margin: "0px"
         }
     };
@@ -18,9 +17,7 @@ class Footer extends Component
     column_style = () => 
     {
         return {
-            backgroundColor: "#838383",
-            width: "100%",
-            height: "400px"
+            display: "grid"
         }
     };
 
@@ -28,7 +25,15 @@ class Footer extends Component
     {
         return {
             textDecoration: "none",
-            color: "white"
+            color: "#FFFFFF"
+        }
+    };
+
+    text_style = () => 
+    {
+        return {
+            margin: "0px",
+            color: "#FFFFFF"
         }
     };
 
@@ -37,12 +42,14 @@ class Footer extends Component
         return(
             <div className="total" style={this.total_style()}>
                 <div className="column" style={this.column_style()}>
-                    <h5>Christopher Andrade</h5>
+                    <h5 className="text" style={this.text_style()}></h5>
+                    <h5 className="text" style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
+                    <h5 className="text" style={this.text_style()}></h5>
                 </div>
                 <div className="column" style={this.column_style()}>
-                    <a href="https://github.com/bentvelj/SpaceApps2020" className="link">Github</a>
-                    <a href="https://2020.spaceappschallenge.org/challenges/connect/space-exploration-your-backyard/details" className="link">NASA Challenge</a>
-                    <a href="">Dataset</a>
+                    <a href="https://github.com/bentvelj/SpaceApps2020" className="link" style={this.link_style()}>Github</a>
+                    <a href="https://2020.spaceappschallenge.org/challenges/connect/space-exploration-your-backyard/details" className="link" style={this.link_style()}>NASA Challenge</a>
+                    <a href="" className="link" style={this.link_style()}>Dataset</a>
                 </div>
             </div>
         )
