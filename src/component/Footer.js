@@ -6,6 +6,8 @@ import dataset_logo from '../res/dataset_logo.png';
 class Footer extends Component {
     total_style = () => {
         return {
+            position: "absolute",
+            bottom: "0",
             display: "flex",
             justifyContent: "space-around",
             backgroundColor: "#3A3A3A",
@@ -13,7 +15,6 @@ class Footer extends Component {
             height: "200px",
             padding: "50px",
             margin: "0px",
-            top: "70vh"
         }
     };
 
