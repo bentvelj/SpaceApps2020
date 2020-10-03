@@ -10,9 +10,16 @@ class WhatsHot extends React.Component {
         }
     }
     componentDidMount() {
+        if ('geolocation' in navigator) {
+            console.log("boy")
+        } else {
+            console.log("utut")
+        }
         fetch(`http://localhost:4000/pic`)
             .then(res => res.json())
             .then(data => this.setState({ pic: data }))
+
+
 
     }
 

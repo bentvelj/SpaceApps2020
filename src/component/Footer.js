@@ -39,32 +39,20 @@ class Footer extends Component {
         }
     };
 
-<<<<<<< HEAD
-    render() {
-        return (
-            <div className="total mt-4" style={this.total_style()}>
-                <div className="column" style={this.column_style()}>
-                    <h5 className="text" style={this.text_style()}></h5>
-                    <h5 className="text" style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
-                    <h5 className="text" style={this.text_style()}></h5>
-=======
-    image_style = () =>
-    {
+    image_style = () => {
         return {
             padding: "5px",
             width: "30%"
         }
     }
 
-    render()
-    {
-        return(
+    render() {
+        return (
             <div style={this.total_style()}>
                 <div style={this.column_style()}>
                     <h5 style={this.text_style()}></h5>
                     <h5 style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
                     <h5 style={this.text_style()}></h5>
->>>>>>> ea6c15a1c3539478f83be89cde193ff25dda906e
                 </div>
 
                 <div style={this.column_style()}>
