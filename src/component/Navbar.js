@@ -9,15 +9,15 @@ class Navbar extends React.Component {
                 <div className="container">
                     <img src={logo} alt="SpaceNearby Logo" href="#" style={{ width: '50%' }}></img>
                     <div className="collapse navbar-collapse">
-                        <ul className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ml-auto button-nav">
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4" href="/">About</button>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/">About</a></button>
                             </li>
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4" href="/search">Search</button>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/search">Search</a></button>
                             </li>
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4" href="/whatshot">What's Hot</button>
+                                <button type="button" className="btn btn-primary mx-4"><a href="/whatshot">What's Hot</a></button>
                             </li>
                         </ul>
                     </div>
