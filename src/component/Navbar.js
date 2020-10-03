@@ -5,7 +5,7 @@ import logo from '../res/FinalLogo.png';
 class Navbar extends React.Component {
     render() {
         return (
-            <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
+            <nav className="navbar navbar-expand navbar-light mb-4" style={{backgroundColor: '#6b9fff'}}>
                 <div className="container">
                     <img src={logo} alt="SpaceNearby Logo" href="#"></img>
                     <div className="collapse navbar-collapse">
