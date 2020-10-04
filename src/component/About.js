@@ -56,6 +56,19 @@ class About extends React.Component {
             margin : "5px"
         }
     }
+
+    get_new_coords = async (new_address,obj) =>{
+        //console.log('IN CALL: ' + this.state.currLoc)
+        const addy = new_address.split(' ').join('%20')
+        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${addy}&key=AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs`)
+            .then(response => response.json())
+            .then(function(data){
+
+                let lat = data.results[0].geometry.location.lat;
+                let lng = data.results[0].geometry.location.lng;
+                obj.setState({location: {latitude : lat, longitude : lng}})
+            })
+    }
     render() {
         return (
             <div>                
@@ -82,10 +95,15 @@ class About extends React.Component {
                         <h3>Current Location:</h3>
                         <p>We think you're here: <b>{this.state.currLoc}</b></p>
                         <input type="text" onChange={(e)=>this.setState({input : e.target.value})} id="input-text" style={this.text_box_attrib()} placeholder={"Enter Location..."}/>
-                        <input type="button" className="btn btn-outline-primary" value="Submit" onClick={()=>this.setState({currLoc : this.state.input})}/>
+                        <input type="button" className="btn btn-outline-primary" value="Submit" onClick={function(){
+                            this.setState({currLoc : this.state.input})
+                            this.get_new_coords(this.state.input,this);
+                            //new_lat, new_long
+                            //this.setState({location : ...})
+                            }.bind(this)}/>
                     </div>
                     <div>
-                        <input type="button" class="btn btn-outline-success" value="Back to my Location" onClick={function(){
+                        <input type="button" className="btn btn-outline-success" value="Back to my Location" onClick={function(){
                             this.setState({currLoc : `${this.state.location.latitude},${this.state.location.longitude}`})
                             document.getElementById("input-text").value = "";
                         }.bind(this)}/>
@@ -108,4 +126,3 @@ class About extends React.Component {
 
 
 export default About
-
