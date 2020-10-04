@@ -18,6 +18,6 @@ code {
   text-decoration: none;
 };
 
-#areas li:hover{
-  color: aqua;
+#areas li {
+  background-color: aqua;
 }
