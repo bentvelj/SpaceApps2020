@@ -1,6 +1,6 @@
 # SpaceApps2020
 
-[Jared Bentvelsen](https://github.com/bentvelj)
+[Jared Bentvelsen](https://github.com/bentvelj)<img align="left" alt="Bassel | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" href="https://www.linkedin.com/in/jaredbentvelsen" />
 
 [Bassel Rezkalla](https://github.com/BasselR/)
 
