@@ -145,7 +145,7 @@ class About extends React.Component {
                 obj.areas_click(locations[index][2], locations[index][3]);
             });
             element.addEventListener('mouseenter', () => {
-                element.style.background = '#6b7d8a'
+                element.style.background = '#E7E7E7'
             })
             element.addEventListener('mouseleave', () => {
                 element.style.background = ''
