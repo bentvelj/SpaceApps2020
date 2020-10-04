@@ -62,26 +62,26 @@ class Navbar extends Component {
                         <ul className="navbar-nav ml-0 button-nav" style={this.list_style()}>
                             <li className="nav-item">
                                 <a href="/">
-                                    <button type="button" className="btn btn-primary mx-4">About</button>
+                                    <button type="button" className="btn btn-primary mx-4">Home</button>
                                 </a>
                             </li>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a href="/search">
                                     <button type="button" className="btn btn-primary mx-4">Search</button>
                                 </a>
-                            </li>
+                            </li> */}
 
                             <li className="nav-item">
                                 <a href="/whatshot">
                                     <button type="button" className="btn btn-primary mx-4">What's Hot</button>
                                 </a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a href="/nearyou">
                                     <button type="button" className="btn btn-primary mx-4">Near You</button>
                                 </a>    
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

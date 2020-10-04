@@ -9,7 +9,9 @@ class About extends React.Component {
             pic: [],
             location: {},
             currLoc: "Hamilton",
-            input : ""
+            input : "Enter Location...",
+            rad_input : 50000,
+            radius : 50000 // 50km
         }
     }
     componentDidMount() {
@@ -27,11 +29,22 @@ class About extends React.Component {
         // console.log("CURRLOC" + this.state.currLoc);
     }
     
-    info_box_style = () => {
+    location_input_style = () => {
         return {
             position: "Absolute",
-            top: "50%",
+            top: "40%",
             right: "50%",
+            paddingBottom: "30px"
+
+        }
+    }
+    rad_input_style = () => {
+        return {
+            position: "Absolute",
+            top: "60%",
+            right: "50%",
+            paddingBottom: "30px"
+
         }
     }
     text_box_attrib = () => {
@@ -64,15 +77,29 @@ class About extends React.Component {
                 
 
                 </Layout>
-                <div className="container" style={this.info_box_style()}>
+                <div className="container" style={this.location_input_style()}>
                     <div>
                         <h3>Current Location:</h3>
                         <p>We think you're here: <b>{this.state.currLoc}</b></p>
-                        <input type="text" onChange={(e)=>this.setState({input : e.target.value})} style={this.text_box_attrib()} placeholder="Enter location..."/>
+                        <input type="text" onChange={(e)=>this.setState({input : e.target.value})} id="input-text" style={this.text_box_attrib()} placeholder={"Enter Location..."}/>
                         <input type="button" className="btn btn-outline-primary" value="Submit" onClick={()=>this.setState({currLoc : this.state.input})}/>
-                        
+                    </div>
+                    <div>
+                        <input type="button" class="btn btn-outline-success" value="Back to my Location" onClick={function(){
+                            this.setState({currLoc : `${this.state.location.latitude},${this.state.location.longitude}`})
+                            document.getElementById("input-text").value = "";
+                        }.bind(this)}/>
                     </div>
                 </div>
+                <div className="container" style={this.rad_input_style()}>
+                        <h3>Current Radius:</h3>
+                        <p><b>{this.state.radius} meter(s)</b></p>
+                        <input type="text" onChange={(e)=>this.setState({rad_input : e.target.value})} id="input-text" style={this.text_box_attrib()} placeholder={"Enter Radius..."}/>
+                        <input type="button" className="btn btn-outline-danger" value="Submit" onClick={function(){
+                            if(this.state.rad_input <= 1 || isNaN(this.state.rad_input)) return;
+                            this.setState({radius : Math.floor(this.state.rad_input)})
+                            }.bind(this)}/>
+                    </div>
             </div>
         
         )
