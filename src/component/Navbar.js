@@ -1,53 +1,45 @@
 import React, { Component } from 'react';
 import logo from '../res/FinalLogo.png';
 
-class Navbar extends Component
-{
-    background_style = () =>
-    {
+class Navbar extends Component {
+    background_style = () => {
         return {
-             /* backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)" */
+            /* backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)" */
             backgroundColor: "#038BE3",
         }
     }
 
-    container_style = () =>
-    {
+    container_style = () => {
         return {
             display: "grid"
         }
     }
 
-    upper_style = () =>
-    {
+    upper_style = () => {
         return {
             width: "100%"
         }
     }
 
-    logo_style = () =>
-    {
+    logo_style = () => {
         return {
             width: "40%"
         }
     }
 
-    lower_style = () =>
-    {
+    lower_style = () => {
         return {
             width: "400px"
         }
     }
-    
-    buttons_style = () =>
-    {
+
+    buttons_style = () => {
         return {
 
         }
     }
 
-    render()
-    {
+    render() {
         return (
             <nav className="navbar navbar-expand navbar-light mb-4" style={this.background_style()}>
                 <div className="container" style={this.container_style()}>
@@ -72,6 +64,11 @@ class Navbar extends Component
                             <li className="nav-item">
                                 <button type="button" className="btn btn-primary mx-4">
                                     <a href="/whatshot">What's Hot</a>
+                                </button>
+                            </li>
+                            <li className="nav-item">
+                                <button type="button" className="btn btn-primary mx-4">
+                                    <a href="/nearyou">Near You</a>
                                 </button>
                             </li>
                         </ul>
