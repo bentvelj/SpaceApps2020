@@ -1,5 +1,6 @@
 # SpaceApps2020 - Space Nearby
 [Challenge](https://2020.spaceappschallenge.org/challenges/connect/space-exploration-your-backyard/details)
+
 An interactive webapp using Google Maps API to reveal locations involved in the space exploration industry nearby!
 <h2>Developers:</h2>
 
