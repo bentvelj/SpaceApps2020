@@ -6,44 +6,46 @@ import dataset_logo from '../res/dataset_logo.png';
 class Footer extends Component {
     total_style = () => {
         return {
+            display: "flex",
             position: "absolute",
             bottom: "0",
-            display: "flex",
-            justifyContent: "space-around",
-            backgroundColor: "#3A3A3A",
             width: "100%",
             height: "100px",
             padding: "50px",
             margin: "0px",
+            justifyContent: "space-around",
+            backgroundColor: "#3A3A3A",
         }
     };
 
     column_style = () => {
         return {
-            display: "flex"
-        }
-    };
-
-    link_style = () => {
-        return {
-            textDecoration: "none",
             display: "flex",
-            width: "100px",
-            right: "100px"
+            height: "25px"
         }
     };
 
     text_style = () => {
         return {
+            height: "25px",
             margin: "0px",
             color: "#FFFFFF"
         }
     };
 
+    link_style = () => {
+        return {
+            display: "flex",
+            padding: "5px",
+            textDecoration: "none"
+        }
+    };
+
     image_style = () => {
         return {
+            height: "25px",
             padding: "5px",
-            width: "30%"
+            margin: "0px"
         }
     }
 
