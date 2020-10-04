@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from './Layout'
 import Iframe from 'react-iframe'
-import e from 'express';
 
 class About extends React.Component {
     constructor(props) {
@@ -167,7 +166,6 @@ class About extends React.Component {
                         {
                             if(this.state.rad_input <= 1 || isNaN(this.state.rad_input)) return;
                             this.setState({radius : Math.floor(this.state.rad_input)})
-
                             this.get_locations();
 
                             console.log(document.getElementById("areas"));
