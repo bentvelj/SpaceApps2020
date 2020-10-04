@@ -1,6 +1,9 @@
 import React from 'react';
 import Layout from './Layout';
-
+import google from 'google-maps';
+var map;
+var service;
+var infowindow;
 
 class NearYou extends React.Component {
     constructor(props) {
@@ -24,7 +27,21 @@ class NearYou extends React.Component {
             });
         }
 
-        var curPos = new google.maps.LatLng(-33.867, 151.195);
+        // var sydney = new google.maps.LatLng(-33.867, 151.195);
+        const pyrmont = { lat: -33.866, lng: 151.196 };
+        const service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(
+            { location: pyrmont, radius: 50, type: "store" },
+            (results, status, pagination) => {
+                if (status !== "OK") return;
+                createMarkers(results, map);
+                // moreButton.disabled = !pagination.hasNextPage;
+
+                if (pagination.hasNextPage) {
+                    // getNextPage = pagination.nextPage;
+                }
+            }
+        );
 
     }
 
@@ -38,15 +55,24 @@ class NearYou extends React.Component {
 
                     </div>
                 </Layout>
-                <script defer
-                    src="https://maps.googleapis.com/maps/api/js?libraries=places
-                    &key=AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs&callback=initMap">
-                </script>
             </div >
         )
 
     }
 
+}
+
+function initMap() {
+
+}
+function createMarkers(places, map) {
+    const bounds = new google.maps.LatLngBounds();
+    const placesList = document.getElementById("places");
+
+    for (let i = 0, place; (place = places[i]); i++) {
+        console.log(place)
+    }
+    map.fitBounds(bounds);
 }
 
 export default NearYou
