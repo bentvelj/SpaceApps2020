@@ -20,4 +20,12 @@ router.get("/pic", (req, res) => {
 
 });
 
+router.get('/location', (req, res) => {
+    if ('geolocation' in navigator) {
+        console.log("boy")
+    } else {
+        console.log("utut")
+    }
+})
+
 module.exports = router;

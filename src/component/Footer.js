@@ -46,8 +46,12 @@ class Footer extends Component
         }
     };
 
+<<<<<<< HEAD
+    image_style = () => {
+=======
     image_style = () =>
     {
+>>>>>>> f10d3f866cfe0c9824c86ae9a30c097cca22588a
         return {
             height: "25px",
             padding: "5px",
@@ -55,9 +59,8 @@ class Footer extends Component
         }
     }
 
-    render()
-    {
-        return(
+    render() {
+        return (
             <div style={this.total_style()}>
                 <div style={this.column_style()}>
                     <h5 style={this.text_style()}>Made for NASA SpaceApps Hackathon 2020</h5>
