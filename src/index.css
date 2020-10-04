@@ -17,3 +17,7 @@ code {
   color: aliceblue;
   text-decoration: none;
 };
+
+#areas li:hover{
+  color: aqua;
+}

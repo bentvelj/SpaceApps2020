@@ -51,7 +51,7 @@ class Footer extends Component {
         return (
             <div style={this.total_style()}>
                 <div style={this.column_style()}>
-                    <h5 style={{height:"25px",padding : "6px", margin : "0px", color: "#FFFFFF"}}>Made for NASA SpaceApps Hackathon 2020</h5>
+                    <h5 style={{ height: "25px", padding: "6px", margin: "0px", color: "#FFFFFF" }}>Made for NASA SpaceApps Hackathon 2020</h5>
                 </div>
 
                 <div style={this.column_style()}>
@@ -65,10 +65,6 @@ class Footer extends Component {
                         <img src={challenge_logo} style={this.image_style()}></img>
                     </a>
 
-                    <a style={this.link_style()} href="">
-                        <h5 style={this.text_style()}>Dataset</h5>
-                        <img src={dataset_logo} style={this.image_style()}></img>
-                    </a>
                 </div>
             </div>
         )

@@ -8,9 +8,9 @@ router.get("/pic", (req, res) => {
 
     var request = {
         method: 'GET',
-        headers: new Headers({
-            'api_key': '6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA'
-        })
+        // headers: new Headers({
+        //     'api_key': '6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA'
+        // })
     }
 
 
