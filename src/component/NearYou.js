@@ -43,7 +43,7 @@ class NearYou extends React.Component {
     }
 
     render() {
-        // console.log(this.state.pic)
+        console.log(this.state.location)
         return (
             <div>
                 <Layout>
