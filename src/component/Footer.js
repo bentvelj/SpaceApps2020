@@ -40,12 +40,8 @@ class Footer extends Component {
         }
     };
 
-<<<<<<< HEAD
-    image_style = () => {
-=======
     image_style = () =>
     {
->>>>>>> f10d3f866cfe0c9824c86ae9a30c097cca22588a
         return {
             padding: "5px",
             width: "30%"
