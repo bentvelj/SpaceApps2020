@@ -6,20 +6,26 @@ class NearYou extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pic: []
+            pic: [],
+            location: {
+                lat: 0,
+                lon: 0
+            }
         }
     }
     componentDidMount() {
-        // fetch(`http://localhost:4000/pic`)
-        //     .then(res => res.json())
-        //     .then(data => this.setState({ pic: data }))
+        if ('geolocation' in navigator) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.setState({
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude
+                })
+            });
+        }
 
-        // if ('geolocation' in navigator) {
-        //     /* geolocation is available */
-        //     navigator.geolocation.getCurrentPosition((position) => {
-        //         console.log(position.coords.latitude, position.coords.longitude);
-        //     });
-        // }
+        var curPos = new google.maps.LatLng(-33.867, 151.195);
+
     }
 
     render() {
@@ -28,26 +34,14 @@ class NearYou extends React.Component {
             <div>
                 <Layout>
                     <div className="container">
-                        <div className="row">
-                            <div className="col-5">
-                                <img src={this.state.pic.hdurl} alt="image of the day" style={{ width: "30vw" }}></img>
 
-                            </div>
-                            <div className=" offset-2 col-5">
-                                <div className="card">
-                                    <div className="card-header">
-                                        <h3>Pic of the Day!</h3>
-                                        <h5>{this.state.pic.date}</h5>
-                                    </div>
-                                    <div className="card-body">
-                                        <p>{this.state.pic.explanation}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </Layout>
+                <script defer
+                    src="https://maps.googleapis.com/maps/api/js?libraries=places
+                    &key=AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs&callback=initMap">
+                </script>
             </div >
         )
 
