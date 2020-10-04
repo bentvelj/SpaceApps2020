@@ -1,4 +1,4 @@
-# SpaceApps2020
+# SpaceApps2020 - Space Nearby
 
 <h2>Developers:</h2>
 
