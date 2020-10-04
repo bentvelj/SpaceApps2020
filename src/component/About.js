@@ -7,10 +7,13 @@ class About extends React.Component {
         super(props);
         this.state = {
             pic: [],
+            start : {},
             location: {},
             currLoc: "Hamilton",
             input : "Enter Location...",
-            rad_input : 50000
+            rad_input : 0,
+            radius : 0,
+            atStart: true
         }
     }
     componentDidMount() {
@@ -19,7 +22,8 @@ class About extends React.Component {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.setState({
                     location: position.coords,
-                    currLoc : position.coords.latitude + ',' + position.coords.longitude
+                    currLoc : position.coords.latitude + ',' + position.coords.longitude,
+                    start: position.coords
                     //currLoc : "toronto"
                 })
             });
@@ -73,20 +77,22 @@ class About extends React.Component {
         return{
             position: "absolute",
             left: "65%",
-            bottom: "10%",
+            bottom: "15%",
             width: "550px",
             height: "400px",
-            overflowY: "scroll"
+            overflowY: "scroll",
+            display: "none"
         }
     }
 
-    areas_click = () =>
+    areas_click = (name,loc) =>
     {
-        
+        this.setState({currLoc : name + ", " + loc});
     }
 
-    get_locations = async () =>
+    get_locations = async (obj) =>
     {
+        await this.get_new_coords(this.state.input,this)
         let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site";
         let key = "AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs";
         let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + this.state.location.latitude + "," + this.state.location.longitude + "&radius=" + this.state.rad_input + "&keyword=" + keywords + "&key=" + key;
@@ -94,7 +100,7 @@ class About extends React.Component {
         let data;
         let locations = [];
 
-        console.log(url);
+       console.log(url);
 
         await fetch(proxy + url).then(response => response.json()).then(output => { data = output.results});
 
@@ -118,9 +124,13 @@ class About extends React.Component {
             let element = document.createElement("li");
             console.log(locations[index][2]);
             element.textContent = locations[index][2] + ", " + locations[index][3];
-            element.addEventListener("click", this.areas_click);
+            element.addEventListener("click", function(){
+                obj.areas_click(locations[index][2],locations[index][3]);
+            });
             areas.appendChild(element);
+            
         }
+        document.getElementById("placeList").style.display = locations.length > 0 ? "block" : "none"
     }
 
     render() {
@@ -149,17 +159,18 @@ class About extends React.Component {
                         <h3>Current Location:</h3>
                         <p>We think you're here: <b>{this.state.currLoc}</b></p>
                         <input type="text" onChange={(e)=>this.setState({input : e.target.value})} id="input-text" style={this.text_box_attrib()} placeholder={"Enter Location..."}/>
-                        <input type="button" className="btn btn-outline-primary" value="Submit" onClick={function(){
+                        {/* <input type="button" className="btn btn-outline-primary" value="Submit" onClick={function(){
                             this.setState({currLoc : this.state.input})
                             this.get_new_coords(this.state.input,this);
                             //new_lat, new_long
                             //this.setState({location : ...})
-                            }.bind(this)}/>
+                            }.bind(this)}/> */}
                     </div>
                     <div>
                         <input type="button" className="btn btn-outline-success" value="Back to my Location" onClick={function(){
-                            this.setState({currLoc : `${this.state.location.latitude},${this.state.location.longitude}`})
+                            this.setState({currLoc : `${this.state.start.latitude},${this.state.start.longitude}`,input : `${this.state.start.latitude},${this.state.start.longitude}`, atStart : true})
                             document.getElementById("input-text").value = "";
+                            document.getElementById("areas").innerHTML = "";
                         }.bind(this)}/>
                     </div>
                 </div>
@@ -167,18 +178,29 @@ class About extends React.Component {
                         <h3>Current Radius:</h3>
                         <p><b>{this.state.radius} meter(s)</b></p>
                         <input type="text" onChange={(e)=>this.setState({rad_input : e.target.value})} id="input-text" style={this.text_box_attrib()} placeholder={"Enter Radius..."}/>
-                        <input type="button" className="btn btn-outline-danger" value="Submit" onClick={function()
-                        {
-                            if(this.state.rad_input <= 1 || isNaN(this.state.rad_input)) return;
-                            this.setState({radius : Math.floor(this.state.rad_input)})
-                            this.get_locations();
+                        <div>
+                            <input type="button" className="btn btn-outline-primary" value="Submit" onClick={function()
+                            {
+                                if(this.state.rad_input <= 1 || isNaN(this.state.rad_input)) return;
+                                if(!this.state.atStart){
+                                    this.setState({currLoc : this.state.input});
+                                    
+                                    this.setState({atStart : false})
+                                }
+                                else{
+                                    this.setState()
+                                }
+                                
+                                this.get_new_coords(this.state.input,this);
 
-                            console.log(document.getElementById("areas"));
+                                this.setState({radius : Math.floor(this.state.rad_input)})
+                                this.get_locations(this);
 
-                        }.bind(this)}/>
+                            }.bind(this)}/>
+                        </div>
                 </div>
 
-                <div style={this.areas_style()}>
+                <div style={this.areas_style()} id='placeList'>
                     <nav>
                         <ul id="areas">
 
