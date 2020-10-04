@@ -71,6 +71,9 @@ class About extends React.Component {
                 let lng = data.results[0].geometry.location.lng;
                 obj.setState({location: {latitude : lat, longitude : lng}})
             })
+            .catch(err => {
+                console.log(err)
+            })
     }
     areas_style = () =>
     {
@@ -90,9 +93,12 @@ class About extends React.Component {
         this.setState({currLoc : name + ", " + loc});
     }
 
-    get_locations = async (obj) =>
+    get_locations = async (obj, atStart) =>
     {
-        await this.get_new_coords(this.state.input,this)
+        console.log('ATSTART: ' + atStart)
+        if(!atStart)
+            await this.get_new_coords(this.state.input,this)
+            
         let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site";
         let key = "AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs";
         let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + this.state.location.latitude + "," + this.state.location.longitude + "&radius=" + this.state.rad_input + "&keyword=" + keywords + "&key=" + key;
@@ -117,7 +123,23 @@ class About extends React.Component {
         console.log(locations);
 
         let areas = document.getElementById("areas");
+        document.getElementById("placeList").style.display = "block"
+        // If areas is null, don't modify the document
+        if(areas === null){
+            console.log('AREAS IS NULL')
+            return
+        }
+        
+
         areas.innerHTML = "";
+
+        console.log('LOC LEN ' + locations.length)
+        if(locations.length === 0){
+            console.log('reeeeee')
+            let text = document.createElement("h3")
+            text.textContent = "No Space Results found :("
+            areas.appendChild(text);
+        }
 
         for(let index = 0; index < locations.length; index++)
         {
@@ -130,7 +152,8 @@ class About extends React.Component {
             areas.appendChild(element);
             
         }
-        document.getElementById("placeList").style.display = locations.length > 0 ? "block" : "none"
+
+       console.log(areas.innerHTML)
     }
 
     render() {
@@ -181,20 +204,22 @@ class About extends React.Component {
                         <div>
                             <input type="button" className="btn btn-outline-primary" value="Submit" onClick={function()
                             {
+                                console.log('CUR: ' + this.state.currLoc)
+                                console.log('INP: ' + this.state.input)
                                 if(this.state.rad_input <= 1 || isNaN(this.state.rad_input)) return;
-                                if(!this.state.atStart){
-                                    this.setState({currLoc : this.state.input});
-                                    
-                                    this.setState({atStart : false})
+                                // UPDATE DISPLAY ONLY IF NEW TEXT WAS ENTERED
+                                if(this.state.input !== this.state.start && this.state.input !== "Enter Location..."){
+                                    this.setState({currLoc : this.state.input, atStart : false});
+                                    console.log('updating display')
+                                    this.setState({radius : Math.floor(this.state.rad_input)})
+                                    this.get_locations(this,false);
                                 }
                                 else{
-                                    this.setState()
+                                    this.setState({input : this.state.start})
+                                    this.setState({radius : Math.floor(this.state.rad_input)})
+                                    this.get_locations(this,true);
                                 }
-                                
-                                this.get_new_coords(this.state.input,this);
 
-                                this.setState({radius : Math.floor(this.state.rad_input)})
-                                this.get_locations(this);
 
                             }.bind(this)}/>
                         </div>
