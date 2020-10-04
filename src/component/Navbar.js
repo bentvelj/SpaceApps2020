@@ -4,32 +4,45 @@ import logo from '../res/FinalLogo.png';
 class Navbar extends Component {
     background_style = () => {
         return {
+<<<<<<< HEAD
             /* backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)" */
             backgroundColor: "#038BE3",
+=======
+            backgroundImage: "linear-gradient(120deg, #0371e4, #0a85fe)"
+            /* backgroundColor: "#e3163d" */
+>>>>>>> 28209ab5d8e618f05a0fb9f368f9c122f0b94be1
         }
     }
 
     container_style = () => {
         return {
-            display: "grid"
+            display: "grid",
+            justifyContent: "center"
         }
     }
 
     upper_style = () => {
         return {
-            width: "100%"
+            
         }
     }
 
     logo_style = () => {
         return {
-            width: "40%"
+            width: "50%"
         }
     }
 
     lower_style = () => {
         return {
-            width: "400px"
+        }
+    }
+
+    list_style = () =>
+    {
+        return {
+            padding: "0px !important",
+            margin: "0px !important"
         }
     }
 
@@ -48,7 +61,7 @@ class Navbar extends Component {
                     </div>
 
                     <div className="collapse navbar-collapse" style={this.lower_style()}>
-                        <ul className="navbar-nav ml-auto button-nav">
+                        <ul className="navbar-nav ml-auto button-nav" style={this.list_style()}>
                             <li className="nav-item">
                                 <button type="button" className="btn btn-primary mx-4">
                                     <a href="/">About</a>
