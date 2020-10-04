@@ -10,6 +10,8 @@ class Navbar extends Component {
 
     container_style = () => {
         return {
+            fontFamily: "Ubuntu, sans-serif",
+            fontSize: "large",
             display: "grid",
             justifyContent: "center"
         }
@@ -17,12 +19,13 @@ class Navbar extends Component {
 
     upper_style = () => {
         return {
-
         }
     }
 
     logo_style = () => {
         return {
+            position: "relative",
+            left: "20px",
             width: "50%"
         }
     }
@@ -35,7 +38,7 @@ class Navbar extends Component {
 
     list_style = () => {
         return {
-            margin: "0px !important",
+
         }
     }
 
@@ -51,33 +54,33 @@ class Navbar extends Component {
                 <div className="container" style={this.container_style()}>
                     <div style={this.upper_style()}>
                         <a href="/">
-                            <img className='m-4' src={logo} alt="SpaceNearby Logo" style={this.logo_style()}></img>
+                            <img className='m-3' src={logo} alt="SpaceNearby Logo" style={this.logo_style()}></img>
                         </a>
                     </div>
 
                     <div className="collapse navbar-collapse" style={this.lower_style()}>
                         <ul className="navbar-nav ml-0 button-nav" style={this.list_style()}>
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4">
-                                    <a href="/">About</a>
-                                </button>
+                                <a href="/">
+                                    <button type="button" className="btn btn-primary mx-4">About</button>
+                                </a>
                             </li>
 
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4">
-                                    <a href="/search">Search</a>
-                                </button>
+                                <a href="/search">
+                                    <button type="button" className="btn btn-primary mx-4">Search</button>
+                                </a>
                             </li>
 
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4">
-                                    <a href="/whatshot">What's Hot</a>
-                                </button>
+                                <a href="/whatshot">
+                                    <button type="button" className="btn btn-primary mx-4">What's Hot</button>
+                                </a>
                             </li>
                             <li className="nav-item">
-                                <button type="button" className="btn btn-primary mx-4">
-                                    <a href="/nearyou">Near You</a>
-                                </button>
+                                <a href="/nearyou">
+                                    <button type="button" className="btn btn-primary mx-4">Near You</button>
+                                </a>    
                             </li>
                         </ul>
                     </div>
