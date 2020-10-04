@@ -81,27 +81,30 @@ class About extends React.Component {
 
     areas_click = () =>
     {
-
+        
     }
 
     get_locations = async () =>
     {
-        let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site|Outer%20Space";
+        //let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site|Outer%20Space";
+        let keywords = "Astronomy|Planetarium";
         let key = "AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs";
         let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + this.state.location.latitude + "," + this.state.location.longitude + "&radius=" + this.state.rad_input + "&keyword=" + keywords + "&key=" + key;
         let proxy = "https://cors-anywhere.herokuapp.com/";
         let data;
         let locations = [];
 
+        console.log(url);
+
         await fetch(proxy + url).then(response => response.json()).then(output => { data = output.results});
 
         for(let index = 0; index < data.length; index++)
         {
             let latitude, longitude, name, address;
-            latitude = data[0].geometry.location.lat;
-            longitude = data[0].geometry.location.lng;
-            name = data[0].name;
-            address = data[0].vicinity;
+            latitude = data[index].geometry.location.lat;
+            longitude = data[index].geometry.location.lng;
+            name = data[index].name;
+            address = data[index].vicinity;
             locations.push([latitude, longitude, name, address]);
         }
 
@@ -112,9 +115,11 @@ class About extends React.Component {
 
         for(let index = 0; index < locations.length; index++)
         {
-            let text = locations[index][2] + ", " + locations[index][3];
-            let element = <li onClick={this.areas_click()}>{text}</li>;
-            
+            let element = document.createElement("li");
+            console.log(locations[index][2]);
+            element.textContent = locations[index][2] + ", " + locations[index][3];
+            element.addEventListener("click", this.areas_click);
+            areas.appendChild(element);
         }
     }
 
@@ -176,6 +181,7 @@ class About extends React.Component {
                 <div style={this.areas_style()}>
                     <nav>
                         <ul id="areas">
+
                         </ul>
                     </nav>
                 </div>
