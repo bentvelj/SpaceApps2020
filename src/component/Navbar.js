@@ -60,7 +60,9 @@ class Navbar extends Component
             <nav className="navbar navbar-expand navbar-light mb-4" style={this.background_style()}>
                 <div className="container" style={this.container_style()}>
                     <div style={this.upper_style()}>
-                        <img className='m-4' src={logo} alt="SpaceNearby Logo" href="#" style={this.logo_style()}></img>
+                        <a href="/">
+                            <img className='m-4' src={logo} alt="SpaceNearby Logo" style={this.logo_style()}></img>
+                        </a>
                     </div>
 
                     <div className="collapse navbar-collapse" style={this.lower_style()}>
