@@ -30,7 +30,7 @@ class WhatsHot extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-5">
-                                <img src={this.state.pic.hdurl} alt="image of the day" style={{ width: "37vw" }}></img>
+                                <img src={this.state.pic.hdurl} alt="image of the day" style={{ width: "30vw" }}></img>
 
                             </div>
                             <div className=" offset-2 col-5">
