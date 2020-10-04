@@ -1,5 +1,7 @@
 # SpaceApps2020
 
+<h2>Developers:</h2>
+
 Jared Bentvelsen
 [<img alt="JARED_LINK" align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][JARED_LINK]
 [<img align="left" width="25px" src="https://img.icons8.com/fluent/48/000000/github.png"/>][JARED_GIT]
