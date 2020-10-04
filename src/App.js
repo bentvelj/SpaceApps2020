@@ -2,6 +2,7 @@ import React from 'react';
 import About from './component/About'
 import Search from './component/Search'
 import WhatsHot from './component/WhatsHot'
+
 import './App.css';
 import { Router } from '@reach/router';
 

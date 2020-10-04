@@ -14,10 +14,16 @@ class WhatsHot extends React.Component {
             .then(res => res.json())
             .then(data => this.setState({ pic: data }))
 
+        if ('geolocation' in navigator) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition((position) => {
+                console.log(position.coords.latitude, position.coords.longitude);
+            });
+        }
     }
 
     render() {
-        console.log(this.state.pic)
+        // console.log(this.state.pic)
         return (
             <div>
                 <Layout>
