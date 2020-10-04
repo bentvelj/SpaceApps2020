@@ -75,7 +75,8 @@ class About extends React.Component {
             left: "65%",
             bottom: "10%",
             width: "550px",
-            height: "400px"
+            height: "400px",
+            overflowY: "scroll"
         }
     }
 
@@ -86,8 +87,7 @@ class About extends React.Component {
 
     get_locations = async () =>
     {
-        //let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site|Outer%20Space";
-        let keywords = "Astronomy|Planetarium";
+        let keywords = "Space%20Agency|Astronomy|Space%20Station|NASA|SpaceX|CSA|Planetarium|Launch%20Site";
         let key = "AIzaSyAPHaPH5VuQOqpUdh_9Fd55cduWiybq4qs";
         let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + this.state.location.latitude + "," + this.state.location.longitude + "&radius=" + this.state.rad_input + "&keyword=" + keywords + "&key=" + key;
         let proxy = "https://cors-anywhere.herokuapp.com/";
