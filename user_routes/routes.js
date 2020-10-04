@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 global.Headers = fetch.Headers;
 
 router.get("/pic", (req, res) => {
-    console.log("thing")
+    // console.log("thing")
 
     var request = {
         method: 'GET',

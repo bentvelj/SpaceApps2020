@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 
 
-class WhatsHot extends React.Component {
+class NearYou extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,9 +10,9 @@ class WhatsHot extends React.Component {
         }
     }
     componentDidMount() {
-        fetch(`http://localhost:4000/pic`)
-            .then(res => res.json())
-            .then(data => this.setState({ pic: data }))
+        // fetch(`http://localhost:4000/pic`)
+        //     .then(res => res.json())
+        //     .then(data => this.setState({ pic: data }))
 
         // if ('geolocation' in navigator) {
         //     /* geolocation is available */
@@ -55,4 +55,4 @@ class WhatsHot extends React.Component {
 
 }
 
-export default WhatsHot
+export default NearYou
