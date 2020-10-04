@@ -4,13 +4,8 @@ import logo from '../res/FinalLogo.png';
 class Navbar extends Component {
     background_style = () => {
         return {
-<<<<<<< HEAD
-            /* backgroundImage: "linear-gradient(120deg, #a30cd0, #940db9)" */
-            backgroundColor: "#038BE3",
-=======
             backgroundImage: "linear-gradient(120deg, #0371e4, #0a85fe)"
             /* backgroundColor: "#e3163d" */
->>>>>>> 28209ab5d8e618f05a0fb9f368f9c122f0b94be1
         }
     }
 
@@ -23,7 +18,7 @@ class Navbar extends Component {
 
     upper_style = () => {
         return {
-            
+
         }
     }
 
@@ -38,8 +33,7 @@ class Navbar extends Component {
         }
     }
 
-    list_style = () =>
-    {
+    list_style = () => {
         return {
             padding: "0px !important",
             margin: "0px !important"
