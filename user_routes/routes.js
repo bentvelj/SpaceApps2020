@@ -14,7 +14,7 @@ router.get("/pic", (req, res) => {
     }
 
 
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA&date=2020-10-03`, request)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA`, request)
         .then(data => data.json())
         .then(rsp => res.send(rsp))
 

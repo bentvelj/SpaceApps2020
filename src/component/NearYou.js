@@ -1,9 +1,5 @@
 import React from 'react';
 import Layout from './Layout';
-import google from 'google-maps';
-var map;
-var service;
-var infowindow;
 
 class NearYou extends React.Component {
     constructor(props) {
@@ -27,21 +23,22 @@ class NearYou extends React.Component {
             });
         }
 
-        // var sydney = new google.maps.LatLng(-33.867, 151.195);
-        const pyrmont = { lat: -33.866, lng: 151.196 };
-        const service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(
-            { location: pyrmont, radius: 50, type: "store" },
-            (results, status, pagination) => {
-                if (status !== "OK") return;
-                createMarkers(results, map);
-                // moreButton.disabled = !pagination.hasNextPage;
 
-                if (pagination.hasNextPage) {
-                    // getNextPage = pagination.nextPage;
-                }
-            }
-        );
+        // var sydney = new google.maps.LatLng(-33.867, 151.195);
+        // const pyrmont = { lat: -33.866, lng: 151.196 };
+        // const service = new google.maps.places.PlacesService(map);
+        // service.nearbySearch(
+        //     { location: pyrmont, radius: 50, type: "store" },
+        //     (results, status, pagination) => {
+        //         if (status !== "OK") return;
+        //         createMarkers(results, map);
+        //         // moreButton.disabled = !pagination.hasNextPage;
+
+        //         if (pagination.hasNextPage) {
+        //             // getNextPage = pagination.nextPage;
+        //         }
+        //     }
+        // );
 
     }
 
@@ -51,7 +48,7 @@ class NearYou extends React.Component {
             <div>
                 <Layout>
                     <div className="container">
-
+                        <div id="map"></div>
 
                     </div>
                 </Layout>
@@ -62,17 +59,5 @@ class NearYou extends React.Component {
 
 }
 
-function initMap() {
-
-}
-function createMarkers(places, map) {
-    const bounds = new google.maps.LatLngBounds();
-    const placesList = document.getElementById("places");
-
-    for (let i = 0, place; (place = places[i]); i++) {
-        console.log(place)
-    }
-    map.fitBounds(bounds);
-}
 
 export default NearYou
