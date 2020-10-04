@@ -17,7 +17,7 @@ Christopher Andrade
 [<img alt="CHRIS_LINK" align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][CHRIS_LINK]
 [<img align="left" width="25px" src="https://img.icons8.com/fluent/48/000000/github.png"/>][CHRIS_GIT]
 
-Yuvraj
+Yuvraj Randhawa
 [<img alt="CHRIS_LINK" align="left" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][YUVI_LINK]
 [<img align="left" width="25px" src="https://img.icons8.com/fluent/48/000000/github.png"/>][YUVI_GIT]
 
@@ -31,4 +31,4 @@ Yuvraj
 [JARED_GIT]:https://github.com/bentvelj
 [CHRIS_GIT]:https://github.com/christopherandrade716
 [YUVI_GIT]:https://github.com/yuvrajrr
-[MATT_GIT]:https://github.com/yuvrajrr
+[MATT_GIT]:https://github.com/MatthewWMcC
