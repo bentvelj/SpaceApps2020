@@ -4,15 +4,14 @@ import Footer from "./Footer";
 
 const Layout = (props) => 
 (
-    <div>
+    <div style={{display: "flex", minHeight: "100vh", flexDirection: "column"}}>
         <Navbar></Navbar>
 
-        <div className="container">
+        <div className="container" style={{flex: "1"}}>
             {props.children}
         </div>
 
         <Footer></Footer>
-
     </div>
 )
 

@@ -7,8 +7,6 @@ class Footer extends Component {
     total_style = () => {
         return {
             display: "flex",
-            position: "absolute",
-            bottom: "0",
             width: "100%",
             height: "100px",
             padding: "50px",
