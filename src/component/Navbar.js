@@ -1,61 +1,52 @@
 import React, { Component } from 'react';
 import logo from '../res/FinalLogo.png';
 
-class Navbar extends Component
-{
-    background_style = () =>
-    {
+class Navbar extends Component {
+    background_style = () => {
         return {
             backgroundImage: "linear-gradient(120deg, #0371e4, #0a85fe)"
             /* backgroundColor: "#e3163d" */
         }
     }
 
-    container_style = () =>
-    {
+    container_style = () => {
         return {
             display: "grid",
             justifyContent: "center"
         }
     }
 
-    upper_style = () =>
-    {
+    upper_style = () => {
         return {
-            
+
         }
     }
 
-    logo_style = () =>
-    {
+    logo_style = () => {
         return {
             width: "50%"
         }
     }
 
-    lower_style = () =>
-    {
+    lower_style = () => {
         return {
         }
     }
 
-    list_style = () =>
-    {
+    list_style = () => {
         return {
             padding: "0px !important",
             margin: "0px !important"
         }
     }
-    
-    buttons_style = () =>
-    {
+
+    buttons_style = () => {
         return {
 
         }
     }
 
-    render()
-    {
+    render() {
         return (
             <nav className="navbar navbar-expand navbar-light mb-4" style={this.background_style()}>
                 <div className="container" style={this.container_style()}>
@@ -82,6 +73,11 @@ class Navbar extends Component
                             <li className="nav-item">
                                 <button type="button" className="btn btn-primary mx-4">
                                     <a href="/whatshot">What's Hot</a>
+                                </button>
+                            </li>
+                            <li className="nav-item">
+                                <button type="button" className="btn btn-primary mx-4">
+                                    <a href="/nearyou">Near You</a>
                                 </button>
                             </li>
                         </ul>
