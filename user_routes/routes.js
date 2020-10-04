@@ -14,18 +14,12 @@ router.get("/pic", (req, res) => {
     }
 
 
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA`, request)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=6NtHJvHpr8mralq5YlKnn9664eVXHxw1wfZrgyBA&date=2020-10-03`, request)
         .then(data => data.json())
         .then(rsp => res.send(rsp))
 
 });
 
-router.get('/location', (req, res) => {
-    if ('geolocation' in navigator) {
-        console.log("boy")
-    } else {
-        console.log("utut")
-    }
-})
+
 
 module.exports = router;
