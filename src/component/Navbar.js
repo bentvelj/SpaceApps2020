@@ -10,6 +10,8 @@ class Navbar extends Component {
 
     container_style = () => {
         return {
+            fontFamily: "Ubuntu, sans-serif",
+            fontSize: "large",
             display: "grid",
             justifyContent: "center"
         }
@@ -17,12 +19,13 @@ class Navbar extends Component {
 
     upper_style = () => {
         return {
-
         }
     }
 
     logo_style = () => {
         return {
+            position: "relative",
+            left: "20px",
             width: "50%"
         }
     }
@@ -35,7 +38,7 @@ class Navbar extends Component {
 
     list_style = () => {
         return {
-            margin: "0px !important",
+
         }
     }
 
@@ -51,7 +54,7 @@ class Navbar extends Component {
                 <div className="container" style={this.container_style()}>
                     <div style={this.upper_style()}>
                         <a href="/">
-                            <img className='m-4' src={logo} alt="SpaceNearby Logo" style={this.logo_style()}></img>
+                            <img className='m-3' src={logo} alt="SpaceNearby Logo" style={this.logo_style()}></img>
                         </a>
                     </div>
 
