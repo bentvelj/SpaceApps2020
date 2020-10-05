@@ -31,7 +31,7 @@ Yuvraj Randhawa
 
 [BASSEL_LINK]:https://www.linkedin.com/in/bassel-rezkalla/
 [JARED_LINK]:https://www.linkedin.com/in/jaredbentvelsen/
-[CHRIS_LINK]:https://www.linkedin.com/in/christopherandrade716/
+[CHRIS_LINK]:https://www.linkedin.com/in/chrisfandrade16/
 [MATT_LINK]:https://www.linkedin.com/in/matthew-mccracken/
 [YUVI_LINK]:https://www.linkedin.com/in/yuvraj-randhawa/
 
