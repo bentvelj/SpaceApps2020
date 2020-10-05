@@ -1,4 +1,4 @@
-# SpaceApps2020 Winner - Space Nearby
+# SpaceApps2020 WINNER - Space Nearby
 ![Schedule Display](https://github.com/bentvelj/SpaceApps2020/blob/main/screenshots/FullScreen.png)
 
 [Challenge](https://2020.spaceappschallenge.org/challenges/connect/space-exploration-your-backyard/details)
