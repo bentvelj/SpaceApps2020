@@ -219,8 +219,6 @@ class About extends React.Component {
                                     this.setState({radius : Math.floor(this.state.rad_input)})
                                     this.get_locations(this,true);
                                 }
-
-
                             }.bind(this)}/>
                         </div>
                 </div>
