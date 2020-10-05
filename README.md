@@ -1,4 +1,6 @@
 # SpaceApps2020 Winner - Space Nearby
+![Schedule Display](https://github.com/bentvelj/SpaceApps2020/blob/main/screenshots/SpaceNearbyLogo.png)
+![Schedule Display](https://github.com/bentvelj/SpaceApps2020/blob/main/screenshots/FullScreen.png)
 [Challenge](https://2020.spaceappschallenge.org/challenges/connect/space-exploration-your-backyard/details)
 
 An interactive webapp using Google Maps API to reveal locations involved in the space exploration industry nearby!
