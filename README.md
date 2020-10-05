@@ -37,6 +37,6 @@ Yuvraj Randhawa
 
 [BASSEL_GIT]:https://github.com/BasselR/
 [JARED_GIT]:https://github.com/bentvelj
-[CHRIS_GIT]:https://github.com/chrisfandrade716
+[CHRIS_GIT]:https://github.com/chrisfandrade16
 [YUVI_GIT]:https://github.com/yuvrajrr
 [MATT_GIT]:https://github.com/MatthewWMcC
